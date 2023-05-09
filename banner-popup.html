@@ -1,0 +1,59 @@
+<script>
+    //bắn div chứa 
+    jQuery('body').append('<div class="wrap-martech-bg-btctn-popup"></div>')
+    var isBannerOpening = sessionStorage.getItem('IsBannerOpening');
+if (!isBannerOpening) {
+    var timer = setInterval(function () {
+        jQuery('.wrap-martech-bg-btctn-popup').append('<div class="martech-bg-btctn-popup" style="display: block;"><div class="martech-btctn-popup"><a rel="nofollow" href="https://event.misa.vn/chi-tiet/248/toa-dam-cong-nghe-tien-phong-van-hanh-toi-uu-va-chuong-trinh-tang-giai-phap-van-phong-so-cho-10000-doanh-nghiep/?utm_source=banner&utm_medium=seo&utm_campaign=&utm_content=&utm_term=mgm__" target="_blank"><img class="banner-center-popup" src="/wp-content/uploads/2023/05/eventpopupeventpopup.webp" alt="MISA AMIS"></a><img class="martech-popup-close" src="/sites/amis-blog/images/digital-conversion-rate/ic-close.svg" alt="MISA AMIS"></div></div>')
+        jQuery('.martech-popup-close').click(function () {
+            jQuery('.martech-bg-btctn-popup').hide(400);
+            jQuery('.martech-bg-btctn-popup').css({ 'background-color': 'unset' });
+        })
+        jQuery('.banner-center-popup').click(function () {
+            jQuery('.martech-bg-btctn-popup').hide(400);
+            jQuery('.martech-bg-btctn-popup').css({ 'background-color': 'unset' });
+        })
+        clearInterval(timer);
+    }, 30000);
+}
+</script>
+<style>
+    .martech-bg-btctn-popup {
+        display: none;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        font-size: 16px;
+        line-height: 1.42857143;
+        color: #393a3d;
+        z-index: 10000;
+        display: block;
+    }
+    .martech-btctn-popup {
+        border-radius: 5px;
+        position: absolute !important;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .martech-btctn-popup a:hover{
+        opacity: 1;
+    }
+    .banner-center-popup{
+        z-index: 100;
+    }
+    .martech-popup-close {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        background: #fff;
+        border-radius: 50%;
+        padding: 4px;
+        cursor: pointer;
+        z-index: 100;
+    }
+</style>
